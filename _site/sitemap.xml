@@ -6,6 +6,10 @@
     
     
     <url>
+        <loc>/vendor/bundle/gems/jekyll-1.2.0/site/jekyll-1-2-0-released</loc>
+    </url>
+    
+    <url>
         <loc>/jekyll/update/welcome-to-jekyll</loc>
     </url>
     
@@ -18,7 +22,27 @@
     </url>
     
     <url>
+        <loc>/vendor/bundle/gems/jekyll-1.2.0/site/jekyll-1-1-2-released</loc>
+    </url>
+    
+    <url>
+        <loc>/vendor/bundle/gems/jekyll-1.2.0/site/jekyll-1-0-4-released</loc>
+    </url>
+    
+    <url>
+        <loc>/vendor/bundle/gems/jekyll-1.2.0/site/jekyll-1-1-1-released</loc>
+    </url>
+    
+    <url>
+        <loc>/vendor/bundle/gems/jekyll-1.2.0/site/jekyll-1-1-0-released</loc>
+    </url>
+    
+    <url>
         <loc>/articles/video-post</loc>
+    </url>
+    
+    <url>
+        <loc>/vendor/bundle/gems/jekyll-1.2.0/site/jekyll-1-0-3-released</loc>
     </url>
     
     <url>
@@ -27,6 +51,18 @@
     
     <url>
         <loc>/articles/sample-post-images</loc>
+    </url>
+    
+    <url>
+        <loc>/vendor/bundle/gems/jekyll-1.2.0/site/jekyll-1-0-2-released</loc>
+    </url>
+    
+    <url>
+        <loc>/vendor/bundle/gems/jekyll-1.2.0/site/jekyll-1-0-1-released</loc>
+    </url>
+    
+    <url>
+        <loc>/vendor/bundle/gems/jekyll-1.2.0/site/jekyll-1-0-0-released</loc>
     </url>
     
     <url>

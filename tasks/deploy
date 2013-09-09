@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+set -e
+
+# Build the site with production config.
+
+./tasks/jekyll --config _config_production.yml
+
+# Deploy Message.
+
+if [ $1 ]; then
+  message=$1
+else
+  echo "Fetching last commit message for deploy message..."
+  message=$(git log -1 --pretty=%B)
+fi
+echo "Using commit message:"
+echo "$message"
+
+# Preparing deploy repo.
+
+if [ ! -d ../teklabs.github.com ]; then
+  echo "No teklabs.github.com deploy repository found! Will clone adjacent to this directory..."
+  pushd ..
+  git clone git@github.com:teklabs/teklabs.github.com.git
+  cd ./teklabs.github.com
+  git checkout -b stage
+else
+  echo "Changing to ../teklabs.github.com directory..."
+  pushd ../teklabs.github.com
+fi
+
+git checkout master
+git pull
+git branch -D stage
+git checkout -b stage
+
+popd
+
+# Sync to deploy repo.
+
+rsync -az --delete --exclude '.git' _site/ ../teklabs.github.com
+
+# Deploy from deploy repo.
+
+pushd ../teklabs.github.com
+git add . 
+
+git commit -a -m "$message"
+git checkout master
+git merge stage
+git push -u origin master
+git checkout stage
+
+popd
+
+# Rebuild the development site.
+
+./tasks/jekyll
